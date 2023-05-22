@@ -34,8 +34,9 @@ Working but struggles with multiple issues:
 3. Install the _latest_ Remix builds.
 4. Apply the `New Vegas Multithread fix` -- See discord for this one.
 5. Rerun the `FalloutNVLauncher.exe`.
-6. Set the game to `High` to enable.
+6. Set the game to `High` to enable further LOD distances.
     - It may be better to use BethINI for setting up the ini files since it has much more reasonable settings, as well as cleaning up the ini to not include so much bloat.
+1. Change the line `bBackground Keyboard=1` in `Fallout.INI` and `FalloutPrefs.ini` to `bBackground Keyboard=0`. Otherwise you won't be able to open the RTX-Remix menu.
 6. Launch the game with the `FalloutNV.exe`. Don't use Mod Organizer as it changes the ini files.
 
 ## Optional
