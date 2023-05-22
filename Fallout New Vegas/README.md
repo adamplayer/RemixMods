@@ -4,7 +4,9 @@
 
 <!-- Describe how the game functions with the remix modificaitons. Is it wonky and barely playable or could one consider a full playthrough possible? Make sure to warn of any flashing lights! -->
 
-Howdy partner, we're all still figuring this dozzy out. Seems like the those giant geckos really doesn't want to be path traced...Don't worry, with enough time, effort, and praying to Todd Howard, anything is possible!
+Working but struggles with multiple issues:
+- Multithreaded loaded seems to crash Bridge on texture loads
+- Lighting is originally done <!--Very Poorly... --> through pixel shaders, and is not able to be translated into the remix pipeline currently.
 
 ---
 
@@ -23,20 +25,18 @@ Howdy partner, we're all still figuring this dozzy out. Seems like the those gia
 
 <!-- List out the steps required to get working. Make sure to refer to the specific game `folders` that each `file` or action takes place in. Refer to the repo as _this_ folder. -->
 
+> **Note**
+> This is really work in progress guide. Included in the repo are mine own ini's and conf's that _may_ work right out the box. They may also induce constant crashes...
+
 1. (Re)install a fresh copy of the game.
-2. Perform the Initial Setup and MO2 sections of Viva New Vegas. Skip the `falloutcustom.ini` section in MO2 (maybe?)
-4. Change the line `bBackground Keyboard` to `0` in any ini file .
-5. Install xNVSE, JNI, and Crash Logger. Don't continue the guide, do not pass go.
-6. Install the latest Remix builds.
-7. Adjust your `DXVK.conf`:
-```
-d3d9.shadermodel = 2
-d3d9.floatEmulation = strict
-```
-8. Rerun the `FalloutNVLauncher.exe` to get a new ini.
-9. Launch the game with the `FalloutNV.exe`
-10. ???
-11. Profit
+2. Follow the Viva New Vegas guide.
+    - Avoid installing any mods that enhance the visuals of the game. These may or may not cause problems with RTX Remix.
+3. Install the _latest_ Remix builds.
+4. Apply the `New Vegas Multithread fix` -- See discord for this one.
+5. Rerun the `FalloutNVLauncher.exe`.
+6. Set the game to `High` to enable.
+    - It may be better to use BethINI for setting up the ini files since it has much more reasonable settings, as well as cleaning up the ini to not include so much bloat.
+6. Launch the game with the `FalloutNV.exe`. Don't use Mod Organizer as it changes the ini files.
 
 ## Optional
 
@@ -60,14 +60,6 @@ These Bethesda games are probably the one of the most unstable ones to be remixe
 
 ## Remix and New Vegas
 
-Since these games have a several render passes going on, there's quite a lot of textures that need marked as ignore. The actual apperance of what the textures are sometimes does not match what it is in the game. This makes things a bit difficult when digging through so many textures.
+Since these games have a several render passes going on, there's quite a lot of textures that need marked as ignore. The actual apperance of what the textures are sometimes does not match what it is in the game. This makes things a bit difficult when digging through so many textures. If you suddenly have a dark dome texture around you, it's likely a dust texture that needs marked as ignore.
 
 ---
-
-Credits:
-
-- Big thanks to all the NVIDIA team behind the RTXRemix project
-
-- All the patient people on the discord that have put up with me going insane.
-
-- You :^)
