@@ -24,18 +24,19 @@ Howdy partner, we're all still figuring this dozzy out. Seems like the those gia
 <!-- List out the steps required to get working. Make sure to refer to the specific game `folders` that each `file` or action takes place in. Refer to the repo as _this_ folder. -->
 
 1. (Re)install a fresh copy of the game.
-2. Perform the Initial Setup and MO2 sections of Viva New Vegas. Skip the `falloutcustom.ini` section in MO2.
-3. Install xNVSE, JNI, and Crash Logger. Don't continue the guide, do not pass go.
-4. Install the latest Remix builds.
-5. Adjust your `DXVK.conf`:
+2. Perform the Initial Setup and MO2 sections of Viva New Vegas. Skip the `falloutcustom.ini` section in MO2 (maybe?)
+4. Change the line `bBackground Keyboard` to `0` in any ini file .
+5. Install xNVSE, JNI, and Crash Logger. Don't continue the guide, do not pass go.
+6. Install the latest Remix builds.
+7. Adjust your `DXVK.conf`:
 ```
 d3d9.shadermodel = 2
 d3d9.floatEmulation = strict
 ```
-6. Rerun the `FalloutNVLauncher.exe` to get a new ini.
-6. Launch the game with the `FalloutNV.exe`
-6. ???
-7. Profit
+8. Rerun the `FalloutNVLauncher.exe` to get a new ini.
+9. Launch the game with the `FalloutNV.exe`
+10. ???
+11. Profit
 
 ## Optional
 
@@ -61,3 +62,12 @@ These Bethesda games are probably the one of the most unstable ones to be remixe
 
 Since these games have a several render passes going on, there's quite a lot of textures that need marked as ignore. The actual apperance of what the textures are sometimes does not match what it is in the game. This makes things a bit difficult when digging through so many textures.
 
+---
+
+Credits:
+
+- Big thanks to all the NVIDIA team behind the RTXRemix project
+
+- All the patient people on the discord that have put up with me going insane.
+
+- You :^)
