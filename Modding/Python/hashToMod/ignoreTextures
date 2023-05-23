@@ -1,0 +1,7 @@
+        over "INPUTHASH"
+        {
+            over "Shader"
+            {
+                bool inputs:ignore_material = 0
+            }
+        }

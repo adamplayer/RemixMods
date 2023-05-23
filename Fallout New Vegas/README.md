@@ -5,8 +5,8 @@
 <!-- Describe how the game functions with the remix modificaitons. Is it wonky and barely playable or could one consider a full playthrough possible? Make sure to warn of any flashing lights! -->
 
 Working but struggles with multiple issues:
-- Multithreaded loaded seems to crash Bridge on texture loads
-- Lighting is originally done <!--Very Poorly... --> through pixel shaders, and is not able to be translated into the remix pipeline currently.
+- ~~Multithreaded loaded seems to crash Bridge on texture loads~~ Fixed with BlueAmulet's hotfix.
+- Lighting is originally done <!--Very Poorly... --> through pixel shaders, and is not able to be translated into the remix pipeline currently. _BlueAmulet has a proof of concept to fix this_
 
 ---
 
@@ -32,7 +32,7 @@ Working but struggles with multiple issues:
 2. Follow the Viva New Vegas guide.
     - Avoid installing any mods that enhance the visuals of the game. These may or may not cause problems with RTX Remix.
 3. Install the _latest_ Remix builds.
-4. Apply the `New Vegas Multithread fix` -- See discord for this one.
+4. Apply BlueAmulet's [temporary fix](https://github.com/BlueAmulet/bridge-remix/releases/tag/remix-mbc_hack) for multithreading from his repo. 
 5. Rerun the `FalloutNVLauncher.exe`.
 6. Set the game to `High` to enable further LOD distances.
     - It may be better to use BethINI for setting up the ini files since it has much more reasonable settings, as well as cleaning up the ini to not include so much bloat.
