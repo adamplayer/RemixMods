@@ -8,12 +8,15 @@ def main():
     
     with open(input_file, "r") as f:
         dirtyhashes = f.read().split(", ")
+    
+    dirtyhashes = filter(None, dirtyhashes)
+    dirtyhashes = [*set(dirtyhashes)]
         
     hashes = []
     for string in dirtyhashes:
         string = string.upper()
         hashes.append(string.replace("0X","mat_"))
-
+        
     with open(template_file, "r") as f:
         template = f.read()
     
