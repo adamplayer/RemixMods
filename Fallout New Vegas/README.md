@@ -26,18 +26,21 @@ Working but struggles with multiple issues:
 <!-- List out the steps required to get working. Make sure to refer to the specific game `folders` that each `file` or action takes place in. Refer to the repo as _this_ folder. -->
 
 > **Note**
-> This is really work in progress guide. Included in the repo are mine own ini's and conf's that _may_ work right out the box. They may also induce constant crashes...
+> This is really work in progress guide. The steps to get it working change daily or even hourly. This is a very good baseline but there will likely be new informarion in the discord that may contradict things here. Included in the repo are mine own ini's and conf's that _may_ work right out the box. They may also induce constant crashes...
 
 1. (Re)install a fresh copy of the game.
 2. Follow the Viva New Vegas guide.
     - Avoid installing any mods that enhance the visuals of the game. These may or may not cause problems with RTX Remix.
 3. Install the _latest_ Remix builds.
 4. Apply BlueAmulet's [temporary fix](https://github.com/BlueAmulet/bridge-remix/releases/tag/remix-mbc_hack) for multithreading from his repo. 
-5. Rerun the `FalloutNVLauncher.exe`.
-6. Set the game to `High` to enable further LOD distances.
-    - It may be better to use BethINI for setting up the ini files since it has much more reasonable settings, as well as cleaning up the ini to not include so much bloat.
-1. Change the line `bBackground Keyboard=1` in `Fallout.INI` and `FalloutPrefs.ini` to `bBackground Keyboard=0`. Otherwise you won't be able to open the RTX-Remix menu.
-6. Launch the game with the `FalloutNV.exe`. Don't use Mod Organizer as it changes the ini files.
+5. Run the `FalloutNVLauncher.exe` to get the baseline inis setup. 
+6. Now use BethINI to setup the INIs used in Mod Organizer. 
+    1. Change the target(?) to be the MO2 inis
+    2. Set the game to `High` preset with the tweaks enabled. 
+    3. Run through the settings and turn off all shaders, reflections, special effects, and shadows. 
+    4. In the custom tab, under the controls section set `bBackground Keyboard=1` to `0`. Otherwise you won't be able to open the RTX-Remix menu.
+    5. Save and Exit BethINI
+6. Use Mod Organizer 2 to launch the game. 
 
 ## Optional
 
