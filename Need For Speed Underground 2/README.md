@@ -1,4 +1,4 @@
-# Game Name
+# Need for Speed Underground 2 Remixed
 
 <!-- Brief discription -->
 Likely one of the best game suited for a remix. This one performs really well and has a ton of lights that can be added.
