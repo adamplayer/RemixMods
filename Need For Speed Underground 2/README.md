@@ -1,10 +1,13 @@
 # Game Name
 
 <!-- Brief discription -->
+Likely one of the best game suited for a remix. This one performs really well and has a ton of lights that can be added.
 
 ## Current Status
 
 <!-- Describe how the game functions with the remix modificaitons. Is it wonky and barely playable or could one consider a full playthrough possible? Make sure to warn of any flashing lights! -->
+
+Culling is quite a problem. The game did not have backface culling so it instead culled harshly with things outside of the camera.
 
 
 ## Requirements
@@ -14,11 +17,28 @@
 | - | - |
 | XYZ | Foobar | -->
 
+- Copy of NFSU2
+- Widescreenfix applied to it
+
 ---
 
 ## Step by step
 
 <!-- List out the steps required to get working. Make sure to refer to the specific game `folders` that each `file` or action takes place in. Refer to the repo as _this_ folder. -->
+
+
+### Ez
+_Coming Soon_
+1. Download and apply the _latest_ remix builds from Nvidia. Both the bridge and dxvk remix!
+2. Download the latest release from this repo, open the archive and just paste it over.
+3. Launch the game
+
+### Manual
+1. Download and apply the _latest_ remix builds from Nvidia. Both the bridge and dxvk remix!
+2. Grab the base rtx.conf from here and place it your game folder.
+2. Get the mod.usda of your choosing from the folder.
+3. Place it in the correct folder: `NFSU2/rtx-remix/mods/gameReadyAssets/`
+5. Launch the game
 
 ## Optional
 
@@ -29,6 +49,10 @@ Widescreen fix:
 
 Silentpatch:
 > This game has a Silentpatch available! This greatly enhances the core game to improve compatiablity with modern systems and allows for easy window mode amoung other things. In order to use both RTXRemix and the Silentpatch, rename `d3d9.dll` from the RTXRemix files to `d3d9.asi`. You can configure Silentpatch in the `scripts` folder. -->
+
+Back up your entire game folder once you get the game running! _Then_ apply rtxremix to it.
+
+There are several remix mods in the works. See the discord for the latest information.
 
 ### Notes
 
