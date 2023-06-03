@@ -1,5 +1,8 @@
 # Tom Clancy Splinter Cell
 
+> **Note**:
+> This is outdated! I will rewrite it someday. In the mean time, join the [discord](discord.gg/rtxremix) and check in on the remix project thread.
+
 ## Configuration
 
 1. Add dxwrapper with `d3d8.dll` into the `system` folder and configure it for d3d8to9 mode.
