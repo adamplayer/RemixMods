@@ -4,9 +4,7 @@
 
 <!-- Describe how the game functions with the remix modificaitons. Is it wonky and barely playable or could one consider a full playthrough possible? Make sure to warn of any flashing lights! -->
 
-Working but struggles with multiple issues:
-- ~~Multithreaded loaded seems to crash Bridge on texture loads~~ Fixed with BlueAmulet's hotfix.
-- Lighting is originally done <!--Very Poorly... --> through pixel shaders, and is not able to be translated into the remix pipeline currently. _BlueAmulet has a proof of concept to fix this_
+Works well at around 20fps outdoors and sometimes up to 60fps indoors! One day I'll figure out how to perf it and hopefully improve that.
 
 ---
 
@@ -30,9 +28,10 @@ Working but struggles with multiple issues:
 
 1. (Re)install a fresh copy of the game.
 2. Follow the Viva New Vegas guide.
-    - Avoid installing any mods that enhance the visuals of the game. These may or may not cause problems with RTX Remix.
-3. Install the _latest_ Remix builds.
-4. Apply BlueAmulet's [temporary fix](https://github.com/BlueAmulet/bridge-remix/releases/tag/remix-mbc_hack) for multithreading from his repo. 
+    - Avoid installing any mods that enhance the visuals of the game. These may or may not cause problems with RTX Remix. Once you have a working build, I'd suggest going back and adding any visual mods to see their impact.
+3. Install the _latest_ Remix nightly builds, both the bridge and dxvk.
+4. Install BlueAmulet's mesh patch from [here](https://github.com/BlueAmulet/RTXRemixStuff/blob/main/NewVegas/NewVegas%20RTX%20Mesh%20Patches.zip) and install it manually with MO2.
+4. Install BlueAmulet's [RTX Helper for New Vegas](https://github.com/BlueAmulet/NewVegasRTXHelper), this translates the lights over to a form that remix can use.
 5. Run the `FalloutNVLauncher.exe` to get the baseline inis setup. 
 6. Now use BethINI to setup the INIs used in Mod Organizer. 
     1. Change the target(?) to be the MO2 inis
@@ -54,16 +53,14 @@ Silentpatch:
 
 Backup your _entire_ game instance whenever you get it working if you have the space. The game typically breaks itself into a state where it won't run anymore and the easiest way to fix it just a clean slate.
 
+### USDA Gen Script
+I highly suggest you run BlueAmulet's usda generator script to automate creating a mod.usda that uses the game's original textures. 
+- Follow the instructions listed on their [repo](https://github.com/BlueAmulet/RTXRemixStuff/tree/main/NewVegas). 
+
 ### Notes
 
 <!-- List things things that don't fit anywhere else. --> 
 
 These Bethesda games are probably the one of the most unstable ones to be remixed. Be prepared to reinstall it frequently.
-
----
-
-## Remix and New Vegas
-
-Since these games have a several render passes going on, there's quite a lot of textures that need marked as ignore. The actual apperance of what the textures are sometimes does not match what it is in the game. This makes things a bit difficult when digging through so many textures. If you suddenly have a dark dome texture around you, it's likely a dust texture that needs marked as ignore.
 
 ---
