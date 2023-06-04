@@ -36,7 +36,7 @@ _Coming Soon_
 ### Manual
 1. Download and apply the _latest_ remix builds from Nvidia. Both the bridge and dxvk remix!
 2. Grab the base rtx.conf from here and place it your game folder.
-2. Get the mod.usda of your choosing from the folder.
+2. Get the mod.usda.
 3. Place it in the correct folder: `NFSU2/rtx-remix/mods/gameReadyAssets/`
 5. Launch the game
 
