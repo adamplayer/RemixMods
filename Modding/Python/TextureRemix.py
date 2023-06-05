@@ -56,11 +56,18 @@ def modWriter(template_file, inputArray):
 
     foo = "INPUTHASH"
     bar = "NORMALHASH"
+    baz = "EMISSIVEHASH"
 
-    for x in range(len(inputArray)):
-        temp1 = template.replace(foo, inputArray[x][0].upper())
-        temp2 = temp1.replace(bar, inputArray[x][1])
-        layers += temp2
+    if template_file == "normalTextures":
+        for x in range(len(inputArray)):
+            temp1 = template.replace(foo, inputArray[x][0].upper())
+            temp2 = temp1.replace(bar, inputArray[x][1])
+            layers += temp2
+    elif template_file == "emissiveTextures":
+        for x in range(len(inputArray)):
+            temp1 = template.replace(foo, inputArray[x][0].upper())
+            temp2 = temp1.replace(baz, inputArray[x][1])
+            layers += temp2
         
     output = header + layers + footer
 
@@ -68,6 +75,8 @@ def modWriter(template_file, inputArray):
         f.write(output)
     print(f"Done!\n")
     return
+
+
 
 
 def TextureRemix(directory, type_filter, name_filter):
@@ -143,23 +152,40 @@ def TextureRemix(directory, type_filter, name_filter):
         modWriter(templateFile, matches)
 
  
-    if type_filter.lower() == 'emissive':
+    elif type_filter.lower() == 'emissive':
         print(f"Generating Emissive Hashes.. \n")
+        templateFile="emissiveTextures"
         for root, dirs, files in os.walk(directory):
             for file in files:
-                # print(file_path)
-                if '_n' in file:
+                if '_em' in file:
                     file_path = os.path.join(root, file)
-                    normalhash = [file, generate_hashes(file_path)]
-                else:
-                    pass
+                    emissivehash.append([file_path, generate_hashes(file_path)])
+        
         print(f"Done!\n")
+
+        print(f"Pairing up emissives with their original texture")
+        matches = [] 
+        for diffuse_index in range(len(diffusehash)):
+            diffuse_value = str(diffusehash[diffuse_index][0])[:-4]
+            for emissive_index in range(len(emissivehash)):
+                emissive_value = str(emissivehash[emissive_index][0])[:-6]
+                if diffuse_value in emissive_value: 
+                    emissive_file_path = str(emissivehash[emissive_index][0])
+                    emissive_file_path = emissive_file_path.replace('.\\gameReadyAssets\\', './')
+                    matches.append((str(diffusehash[diffuse_index][1]), emissive_file_path))
+
+
+        matches = remove_duplicates(matches)
+
+        print(matches)
+
+        modWriter(templateFile, matches)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate hashes for DDS textures in a given directory based on a filter.")
     parser.add_argument('-d', '--directory', help='The directory to be searched', required=True)
-    parser.add_argument('-t', '--type', help='Type to be searched. Should be Emmisve, Normal, Metalic, Opacity', required=True)
-    parser.add_argument('-f', '--filter', help='Filter string. Should be _em, _n, _m, _o, _g', required=True)
+    parser.add_argument('-t', '--type', help='Type to be searched. Should be Emissive, Normal, Metalic, Opacity', required=True)
+    parser.add_argument('-f', '--filter', help='Filter string. Examples: _em, _n, _m, _o, _g', required=True)
 
     args = parser.parse_args()
 
