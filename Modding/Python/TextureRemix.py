@@ -78,7 +78,7 @@ def TextureRemix(directory, type_filter, name_filter):
     filters = ['_em', '_n', '_m', '_o', '_g']
     diffusehash = [] # Where we're going to store the diffuse textures.
     normalhash = [] # Store the normies here with it's matching parent texture
-    emmissivehash = [] 
+    emissivehash = [] 
     # opacityhash = [] # For a later date.
     # metalichash = [] # Rainy day
 
@@ -88,7 +88,7 @@ def TextureRemix(directory, type_filter, name_filter):
         return
 
     # Check type_filter validity
-    if type_filter.lower() not in ['normal', 'emmissive']:
+    if type_filter.lower() not in ['normal', 'emissive']:
         print(f'The type_filter {type_filter} is not valid.')
         return
 
@@ -143,7 +143,7 @@ def TextureRemix(directory, type_filter, name_filter):
         modWriter(templateFile, matches)
 
  
-    if type_filter.lower() == 'emmissive':
+    if type_filter.lower() == 'emissive':
         print(f"Generating Emissive Hashes.. \n")
         for root, dirs, files in os.walk(directory):
             for file in files:
