@@ -43,13 +43,13 @@ def modWriter(template_file, inputArray):
     # print(template_file)
     outputFileName = "usdFiles\\" + template_file + ".usda"
 
-    with open(os.getcwd() + "\\usdFiles\\" + template_file, "r") as f:
+    with open(os.getcwd() + "\\usdFiles\\" + template_file + ".txt", "r") as f:
         template = f.read()
     
-    with open("usdFiles\\usda_header", "r") as f:
+    with open("usdFiles\\usda_header.txt", "r") as f:
         header = f.read()
 
-    with open("usdFiles\\usda_footer", "r") as f:
+    with open("usdFiles\\usda_footer.txt", "r") as f:
         footer = f.read() 
 
     layers = ''
