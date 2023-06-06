@@ -3,18 +3,6 @@
             over "Shader"
             {
                 int inputs:encoding = 2 (
-                    customData = {
-                        int default = 0
-                    }
-                    displayGroup = "Normal"
-                    displayName = "Normal Map Encoding"
-                    doc = "Encoding type for the normal map.  Octahedral for 2 channel textures. tangent_space_dx for 3 channel normals, and tangent_space_ogl for 3 channel normals with an inverted (OpenGL style) G channel."
-                    hidden = false
-                    renderType = "::Z73file_3A::Z17D_3A::Games::Z47Fallout_2520New_2520Vegas::Z58rtx_2Dremix::captures::materials::AperturePBR_Normal::normalmap_encoding"
-                    sdrMetadata = {
-                        string __SDR__enum_value = "octahedral"
-                        string options = "octahedral:0|tangent_space_ogl:1|tangent_space_dx:2"
-                    }
                 )
                 asset inputs:normalmap_texture = @"NORMALHASH"@ (
                     colorSpace = "auto"
