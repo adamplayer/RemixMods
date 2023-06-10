@@ -42,14 +42,15 @@ def modWriter(template_file, inputArray):
     # print(inputArray)
     # print(template_file)
     outputFileName = "usdFiles\\" + template_file + ".usda"
+    print(f"Output directory and file name: {outputFileName}")
 
-    with open(os.getcwd() + "\\usdFiles\\" + template_file, "r") as f:
+    with open(os.getcwd() + "\\usdFiles\\" + template_file + ".txt", "r") as f:
         template = f.read()
     
-    with open("usdFiles\\usda_header", "r") as f:
+    with open("usdFiles\\usda_header.txt", "r") as f:
         header = f.read()
 
-    with open("usdFiles\\usda_footer", "r") as f:
+    with open("usdFiles\\usda_footer.txt", "r") as f:
         footer = f.read() 
 
     layers = ''
@@ -61,14 +62,15 @@ def modWriter(template_file, inputArray):
     if template_file == "normalTextures":
         for x in range(len(inputArray)):
             temp1 = template.replace(foo, inputArray[x][0].upper())
-            temp2 = temp1.replace(bar, inputArray[x][1])
+            file_name = os.path.basename(inputArray[x][1])
+            temp2 = temp1.replace(bar, f"./{file_name}")
             layers += temp2
     elif template_file == "emissiveTextures":
         for x in range(len(inputArray)):
             temp1 = template.replace(foo, inputArray[x][0].upper())
-            temp2 = temp1.replace(baz, inputArray[x][1])
+            file_name = os.path.basename(inputArray[x][1])
+            temp2 = temp1.replace(baz, f"./{file_name}")
             layers += temp2
-        
     output = header + layers + footer
 
     with open(outputFileName, "w") as f:
@@ -107,13 +109,12 @@ def TextureRemix(directory, type_filter, name_filter):
     print(f"Generating Diffuse Hashes..")
     for root, dirs, files in os.walk(directory):
         for file in files:
-            # print(file_path)
             if any(filter in file for filter in filters):
                 pass
             else:
                 file_path = os.path.join(root, file)
-                diffusehash.append([file, generate_hashes(file_path)])
-
+                diffusehash.append([os.path.basename(file), generate_hashes(file_path)])
+                
     print(f"Removing duplicate hashes...")
     diffusehash = remove_duplicates(diffusehash)
     # print(diffusehash)

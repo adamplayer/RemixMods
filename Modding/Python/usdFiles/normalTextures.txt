@@ -1,0 +1,17 @@
+        over "mat_INPUTHASH"
+        {
+            over "Shader"
+            {
+                int inputs:encoding = 2 (
+                )
+                asset inputs:normalmap_texture = @"NORMALHASH"@ (
+                    colorSpace = "auto"
+                    customData = {
+                        asset default = @@
+                    }
+                    displayGroup = "Normal"
+                    displayName = "Normal Map"
+                    hidden = false
+                )
+            }
+        }
