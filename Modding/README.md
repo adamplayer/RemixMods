@@ -1,5 +1,6 @@
-# Remixing
-Congrats on getting the game to accept RTX Remix! Now comes the fun part, remixing!
+# Modding
+
+Here's some tools to help remix titles!
 
 ## What's here
 ### TextureRemix.py
