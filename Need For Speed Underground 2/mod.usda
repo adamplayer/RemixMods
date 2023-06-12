@@ -8,7 +8,6 @@
         int refinementOverrideImplVersion = 0
     }
     metersPerUnit = 0.01
-    timeCodesPerSecond = 24
     upAxis = "Z"
 )
 
@@ -3747,38 +3746,4 @@ over "RootNode"
             }
         }
     }
-
-    over "lights"
-    {
-        over "SkyDome_Non_Replaceable"
-        {
-            float colorTemperature = 3500
-            bool enableColorTemperature = 1
-            float exposure = 4.3
-            float intensity = 147.3
-            float3 xformOp:rotateXYZ = (0, 0, 0)
-            float3 xformOp:scale = (1, 1, 1)
-            double3 xformOp:translate = (0, 0, 0)
-            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
-        }
-
-    over "Camera"
-    {
-        float focalLength = 9.400001
-        float focusDistance = 0
-        float fStop = 0
-        custom uniform vector3d omni:kit:centerOfInterest = (0, 0, -614.624420061951)
-        float3 xformOp:rotateZYX = (98.12066, 24.759338, 175.50229)
-        float3 xformOp:scale = (1, 1, 1)
-        double3 xformOp:translate = (-270.90216064453125, 550.7139282226562, 33.005550384521484)
-        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateZYX", "xformOp:scale"]
-    }
 }
-
-over "OmniverseKit_Persp"
-{
-    float focalLength = 15
-    float focusDistance = 0
-    float fStop = 0
-}
-
